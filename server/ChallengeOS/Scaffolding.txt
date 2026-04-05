@@ -1,0 +1,8 @@
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+{
+    optionsBuilder.UseLazyLoadingProxies();
+    optionsBuilder.UseSqlServer(DbSeeder.ConnectionString);
+}
+
+
+Scaffold-DbContext "Server=(local); Database=ChallengeOS_db; Integrated Security=True;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutPutDir DbModels -Force
